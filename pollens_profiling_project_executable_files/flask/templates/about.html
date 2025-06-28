@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Pollen Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="{{ url_for('static', filename='images/logo-lemon.svg') }}" alt="Pollen's Profilling Logo" style="height: 2.2rem; width: 2.2rem; vertical-align: middle;">
+                <span style="color: var(--lemon5); font-weight: bold; font-size: 1.2em; letter-spacing: 1px;">Pollen's Profilling</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+                <li><a href="{{ url_for('team') }}">Our Team</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>About Pollen Classification</h1>
+                <p>Understanding the science behind pollen analysis and our  AI system</p>
+            </section>
+
+            <!-- About Content -->
+            <section class="about-content">
+                <div class="about-text">
+                    <h2>What is Pollen Classification?</h2>
+                    <p>Pollen classification is the scientific process of identifying and categorizing pollen grains based on their morphological characteristics. Each pollen grain has unique features such as size, shape, surface texture, and aperture patterns that help scientists identify the plant species they came from.</p>
+
+                    <p>This field is crucial for various applications including:</p>
+                    <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                        <li>Allergy research and treatment</li>
+                        <li>Archaeological studies</li>
+                        <li>Climate change research</li>
+                        <li>Forensic investigations</li>
+                        <li>Agricultural monitoring</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="{{ url_for('static', filename='images/hibiscus-7007016_1920.jpg') }}" alt="Pollen Analysis" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+            </section>
+
+            <!-- Technology Section -->
+            <section style="margin: 4rem 0;">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 3rem; font-size: 2.5rem;">Our Technology</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">🤖 Deep Learning</h3>
+                        <p>We use state-of-the-art convolutional neural networks (CNNs) trained on thousands of pollen grain images to achieve high accuracy classification.</p>
+                    </div>
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">🔍 Image Processing</h3>
+                        <p>Advanced image processing techniques enhance pollen grain features and improve classification accuracy.</p>
+                    </div>
+                    <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">📈 Machine Learning</h3>
+                        <p>Our models continuously learn and improve from new data, ensuring better accuracy over time.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Process Section -->
+            <section style="margin: 4rem 0;">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 3rem; font-size: 2.5rem;">How It Works</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📷</div>
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">1. Upload Image</h3>
+                        <p>Upload a clear image of the pollen grain you want to classify</p>
+                    </div>
+                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">⚙️</div>
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">2. AI Analysis</h3>
+                        <p>Our AI system analyzes the image and extracts key features</p>
+                    </div>
+                    <div style="text-align: center; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">3. Classification</h3>
+                        <p>Get the proper class of the pollen grain</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications Section -->
+            <section style="margin: 4rem 0;">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 3rem; font-size: 2.5rem;">Applications</h2>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="{{ url_for('static', filename='images/lily-7288823_640.jpg') }}" alt="Medical Research">
+                        <div class="caption">
+                            <h3>Medical Research</h3>
+                            <p>Allergy studies and treatment development</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{ url_for('static', filename='images/flower-8092680_1920 (1).jpg') }}" alt="Environmental Science">
+                        <div class="caption">
+                            <h3>Environmental Science</h3>
+                            <p>Climate change and ecosystem monitoring</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{ url_for('static', filename='images/flower-3763573_640.jpg') }}" alt="Archaeology">
+                        <div class="caption">
+                            <h3>Archaeology</h3>
+                            <p>Historical climate and vegetation studies</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Pollen's Profiling. All rights reserved. |  Pollen Classification System</p>
+    </footer>
+</body>
+</html>

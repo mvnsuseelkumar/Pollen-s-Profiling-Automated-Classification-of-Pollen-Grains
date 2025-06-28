@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction - Pollen Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="{{ url_for('static', filename='images/logo-lemon.svg') }}" alt="Pollen's Profilling Logo" style="height: 2.2rem; width: 2.2rem;">
+                <span style="color: var(--lemon5); font-weight: bold; font-size: 1.2em; letter-spacing: 1px;">Pollen's Profilling</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+                <li><a href="{{ url_for('team') }}">Our Team</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="hero">
+                <h1>Pollen Classification</h1>
+                <p>Upload an image of a pollen grain and get instant AI-powered classification results</p>
+            </section>
+
+            <!-- Prediction Section -->
+            <section class="prediction-section">
+                <form id="uploadForm">
+                    <div class="upload-area" id="uploadArea">
+                        <div style="text-align: center;">
+                            <div style="font-size: 4rem; margin-bottom: 1rem;">📷</div>
+                            <h3 style="color: #667eea; margin-bottom: 1rem;">Upload Pollen Image</h3>
+                            <p style="margin-bottom: 2rem; color: #666;">Drag and drop your image here or click to browse</p>
+                            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                            <button class="btn" type="button" onclick="document.getElementById('fileInput').click()">Choose File</button>
+                        </div>
+                    </div>
+
+                    <div id="previewSection" style="display: none; text-align: center; margin: 2rem 0;">
+                        <h3 style="color: #667eea; margin-bottom: 1rem;">Image Preview</h3>
+                        <img id="imagePreview" style="max-width: 400px; max-height: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="margin-top: 1rem;">
+                            <button class="btn" type="button" onclick="submitForm()">Classify Pollen</button>
+                            <button class="btn" type="button" onclick="resetUpload()" style="background: #6c757d; margin-left: 1rem;">Reset</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="loadingSection" style="display: none; text-align: center; margin: 2rem 0;">
+                    <div class="loading" style="margin-bottom: 1rem;"></div>
+                    <p>Analyzing pollen grain...</p>
+                </div>
+
+                <div id="resultsSection" style="display: none; margin: 2rem 0;">
+                    <h3 style="color: #667eea; margin-bottom: 1rem; text-align: center;">Classification Results</h3>
+                    <div id="resultsContent" style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <!-- Results go here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Pollen's Profiling. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const imagePreview = document.getElementById('imagePreview');
+        const previewSection = document.getElementById('previewSection');
+        const resultsSection = document.getElementById('resultsSection');
+        const loadingSection = document.getElementById('loadingSection');
+
+        uploadArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
+
+        uploadArea.addEventListener('drop', e => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) handleFile(files[0]);
+        });
+
+        fileInput.addEventListener('change', e => {
+            if (e.target.files.length > 0) handleFile(e.target.files[0]);
+        });
+
+        function handleFile(file) {
+            if (file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    imagePreview.src = e.target.result;
+                    previewSection.style.display = 'block';
+                    resultsSection.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image file.');
+            }
+        }
+
+        function resetUpload() {
+            fileInput.value = '';
+            previewSection.style.display = 'none';
+            resultsSection.style.display = 'none';
+            loadingSection.style.display = 'none';
+        }
+
+        async function submitForm() {
+            const file = fileInput.files[0];
+            if (!file) return alert("Please select an image first.");
+
+            loadingSection.style.display = "block";
+            resultsSection.style.display = "none";
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                const response = await fetch("/predict", {
+                    method: "POST",
+                    body: formData
+                });
+                const data = await response.json();
+
+                document.getElementById("resultsContent").innerHTML = `
+                    <h2 style="color: #667eea;">Prediction: ${data.class_label}</h2>
+                `;
+
+                loadingSection.style.display = "none";
+                resultsSection.style.display = "block";
+
+            } catch (err) {
+                alert("Error in prediction");
+                console.error(err);
+                loadingSection.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

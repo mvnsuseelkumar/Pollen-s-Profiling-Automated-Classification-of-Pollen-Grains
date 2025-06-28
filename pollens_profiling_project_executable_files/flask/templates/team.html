@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Pollen Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('home') }}" class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="{{ url_for('static', filename='images/logo-lemon.svg') }}" alt="Pollen's Profilling Logo" style="height: 2.2rem; width: 2.2rem;">
+                <span style="color: var(--lemon5); font-weight: bold; font-size: 1.2em; letter-spacing: 1px;">Pollen's Profilling</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+                <li><a href="{{ url_for('team') }}">Our Team</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>Meet Our Team</h1>
+                <p>The passionate minds behind PollenAI</p>
+            </section>
+
+            <!-- Team Section -->
+            <section class="team-grid">
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/s.png') }}" alt="M.V.N.Suseel Kumar">
+                    <h3>M.V.N.Suseel Kumar</h3>
+                    <p>Team Member</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/y.png') }}" alt="I.Yasasswini">
+                    <h3>I.Yasasswini</h3>
+                    <p>Team Member</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/m.png') }}" alt="E.Mary Jones">
+                    <h3>E.Mary Jones</h3>
+                    <p>Team Member</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/v.png') }}" alt="I.Venkata Vikash">
+                    <h3>I.Venkata Vikash</h3>
+                    <p>Team Member</p>
+                </div>
+                <div class="team-member">
+                    <img src="{{ url_for('static', filename='images/p.png') }}" alt="J.Pushpitha">
+                    <h3>J.Pushpitha</h3>
+                    <p>Team Member</p>
+                </div>
+            </section>
+
+            <!-- Mission Section -->
+            <section style="margin: 4rem 0;">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 3rem; font-size: 2.5rem;">Our Mission</h2>
+                <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto;">
+                    We are dedicated to advancing the science of pollen classification through innovative AI technology,
+                    making pollen analysis accessible, accurate, and impactful for researchers, clinicians, and enthusiasts worldwide.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Pollen's Profiling. All rights reserved. |  Pollen Classification System</p>
+    </footer>
+</body>
+</html>
