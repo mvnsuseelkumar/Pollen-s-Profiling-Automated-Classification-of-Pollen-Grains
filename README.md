@@ -78,7 +78,7 @@ project-root/
 
 ```bash
 git clone https://github.com/your-username/pollen-classification-app.git
-cd pollen-classification-app
+cd Pollen-s-Profiling-Automated-Classification-of-Pollen-Grains
 ```
 
 2. **Navigate to Flask app directory:**
