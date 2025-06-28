@@ -19,15 +19,17 @@ The purpose of this documentation folder is to provide all design plans, diagram
 ## 📂 Folder Contents
 
 ```
-Pollens_Profilling_documents/
-├── README.md                          # This file
-├── Customer Journey Map.pdf           # Visual UX journey
-├── UI Mockups/                        # Interface and layout drafts
-├── ERD_Diagram.pdf                    # Database structure
-├── Project_Plan.docx / .pdf           # Timeline and planning notes
-├── Report/                            # Detailed write-up of project
-├── PPT/                               # Slide presentation
-└── Other_References/                  # External articles, citations
+Pollens_Profilling_documents/      # Complete documentation folder
+├── Ideation Phase/
+├── Performance Testing/
+├── Project Design Phase/
+├── Project Planning Phase/
+├── Requirement Analysis/
+├── Final Report.docx
+├── Final Report.pdf
+├── Machine Learning Documentation Format.docx
+├── Machine Learning Documentation Format.pdf
+└── README.md
 ```
 
 ---
