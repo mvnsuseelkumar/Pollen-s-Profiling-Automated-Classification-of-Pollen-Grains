@@ -77,7 +77,7 @@ project-root/
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/your-username/pollen-classification-app.git
+git clone https://github.com/mvnsuseelkumar/Pollen-s-Profiling-Automated-Classification-of-Pollen-Grains.git
 cd Pollen-s-Profiling-Automated-Classification-of-Pollen-Grains
 ```
 
