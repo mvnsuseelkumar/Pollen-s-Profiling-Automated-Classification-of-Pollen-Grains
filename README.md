@@ -142,8 +142,6 @@ If you want to retrain the model or modify it:
 | Mamidela Venkata Naga Suseel Kumar |
 | Eduri Mary Jones                   |
 | Idimukkala Yasasswini              |
-| Inturi Venkata Vikash              |
-| J. Pushpitha                       |
 
 Meet our amazing contributors who made this project possible! You can also find them on the **Our Team** page!
 
