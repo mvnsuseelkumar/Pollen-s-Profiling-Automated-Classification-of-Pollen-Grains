@@ -19,17 +19,17 @@ The purpose of this documentation folder is to provide all design plans, diagram
 ## 📂 Folder Contents
 
 ```
-Pollens_Profilling_documents/      # Complete documentation folder
-├── Ideation Phase/
-├── Performance Testing/
-├── Project Design Phase/
-├── Project Planning Phase/
-├── Requirement Analysis/
-├── Final Report.docx
-├── Final Report.pdf
-├── Machine Learning Documentation Format.docx
-├── Machine Learning Documentation Format.pdf
-└── README.md
+Pollens_Profilling_documents/              # Project documentation folder
+├── Ideation Phase/                        # Idea generation and problem understanding
+├── Performance Testing/                   # Model and system testing results
+├── Project Design Phase/                  # UI and system design documents
+├── Project Planning Phase/                # Timeline and planning details
+├── Requirement Analysis/                  # Project requirements and analysis
+├── Final Report.docx                      # Final project report (Word)
+├── Final Report.pdf                       # Final project report (PDF)
+├── Machine Learning Documentation Format.docx  # ML report draft (Word)
+├── Machine Learning Documentation Format.pdf   # ML report draft (PDF)
+└── README.md                              # Info about this folder
 ```
 
 ---
