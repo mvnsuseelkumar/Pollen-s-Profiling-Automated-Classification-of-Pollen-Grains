@@ -6,25 +6,25 @@ This project is a Flask-based web application for classifying pollen grain image
 
 ## 🚀 Features
 
-* 🌸 Deep learning model to classify pollen grains
-* 🖼 Upload images and get predictions instantly
-* 🎨 Modern UI with pages: Home, About, Prediction, Our Team, Contact
-* 📈 Visualization of training metrics
-* 🧠 Model trained using TensorFlow and Keras
+- 🌸 Deep learning model to classify pollen grains
+- 🖼 Upload images and get predictions instantly
+- 🎨 Modern UI with pages: Home, About, Prediction, Our Team, Contact
+- 📈 Visualization of training metrics
+- 🧠 Model trained using TensorFlow and Keras
 
 ---
 
 ## 🛠 Technologies Used
 
-* Python 3.11+
-* Flask 3.x
-* TensorFlow 2.x
-* Keras
-* OpenCV
-* Scikit-learn
-* NumPy, Pandas, Matplotlib
-* HTML5, CSS3 (Glassmorphism UI)
-* Jupyter Notebook (for model development)
+- Python 3.11+
+- Flask 3.x
+- TensorFlow 2.x
+- Keras
+- OpenCV
+- Scikit-learn
+- NumPy, Pandas, Matplotlib
+- HTML5, CSS3 (Glassmorphism UI)
+- Jupyter Notebook (for model development)
 
 ---
 
@@ -77,7 +77,7 @@ project-root/
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/your-username/pollen-classification-app.git
+git clone https://github.com/mvnsuseelkumar/Pollen-s-Profiling-Automated-Classification-of-Pollen-Grains.git
 cd Pollen-s-Profiling-Automated-Classification-of-Pollen-Grains
 ```
 
@@ -116,20 +116,20 @@ Then open your browser and go to: 📍 `http://127.0.0.1:5000/`
 
 If you want to retrain the model or modify it:
 
-* Open `pollen_classification.ipynb` in Jupyter Notebook inside the `flask/` folder.
-* Ensure `pollen_dataset/images/`, `bboxes.csv`, and `class_map.csv` are present outside the `flask/` folder as shown in the structure.
-* Execute all cells to preprocess data, train the CNN, and export:
+- Open `pollen_classification.ipynb` in Jupyter Notebook inside the `flask/` folder.
+- Ensure `pollen_dataset/images/`, `bboxes.csv`, and `class_map.csv` are present outside the `flask/` folder as shown in the structure.
+- Execute all cells to preprocess data, train the CNN, and export:
 
-  * `pollen_model.keras`
-  * `labelencoder.pkl`
+  - `pollen_model.keras`
+  - `labelencoder.pkl`
 
 ---
 
 ## 📸 Prediction Demo
 
-* Navigate to the **Prediction** page in the app.
-* Upload a cropped pollen grain image.
-* The model will return the predicted class with high accuracy.
+- Navigate to the **Prediction** page in the app.
+- Upload a cropped pollen grain image.
+- The model will return the predicted class with high accuracy.
 
 ---
 
