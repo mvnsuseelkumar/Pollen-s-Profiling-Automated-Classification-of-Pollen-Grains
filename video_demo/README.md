@@ -16,10 +16,16 @@ Pollen-s-Profiling-Automated-Classification-of-Pollen-Grains/
 
 ## 📽️ About the Demo
 
+# Drive link
+
+```bash
+https://drive.google.com/file/d/1L9QGJqV6rBmIQgdXozxgQBnS6dgZK3k4/view?usp=sharing
+```
+
 This video illustrates:
 
-* Uploading a pollen image and receiving a classification
-* Overview of team, contact, and UI sections
+- Uploading a pollen image and receiving a classification
+- Overview of team, contact, and UI sections
 
 It is ideal for presentations, demonstrations, or submission reviews.
 
@@ -31,4 +37,3 @@ It is ideal for presentations, demonstrations, or submission reviews.
 Contributor & Presenter of the demo
 
 ---
-
